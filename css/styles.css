@@ -8,6 +8,7 @@
 /* Border для карточек #EEEEEE */
 /* Цвет иконок #AFB1B8 */
 /* Второй шрифт 'Raleway'    */
+/* Цвет кнопки при hover и focus #188ce8 */
 :root {
   --accent-color: #2196f3;
   --primary-text-color: #757575;
@@ -18,6 +19,7 @@
   --dark-bcg-color: #2f303a;
   --card-border: #eeeeee;
   --icon-color: #afb1b8;
+  --hover-btn-color: #188ce8;
 
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -91,7 +93,13 @@ button {
   border-bottom: 1px solid #ececec;
 }
 
-.nav .logo {
+.header-nav,
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
   margin-right: 93px;
   padding-top: 24px;
   padding-bottom: 25px;
@@ -104,53 +112,47 @@ button {
   line-height: 1.19;
   text-decoration: none;
 }
-.logo .accent {
+.logo__text {
   color: var(--accent-color);
 }
 
-.nav-link {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
 .nav {
   display: flex;
-  align-items: center;
-}
-.nav-list {
-  display: flex;
-}
-.contacts {
-  display: flex;
-  margin-left: auto;
 }
 
-.nav-item:not(:last-child) {
+.nav__item:not(:last-child) {
   margin-right: 50px;
 }
-.nav-link,
-.contacts-link {
+
+.nav__link {
+  display: block;
+}
+.nav__link,
+.contacts__link {
   max-height: 80px;
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-weight: 500;
   text-decoration: none;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  color: var(--primary-text-color);
 
   transition: color 250ms var(--timing-function);
 }
-.nav-link {
+.nav__link {
   color: var(--secondary-text-color);
 }
-.nav-link:hover,
-.nav-link:focus {
+.nav__link:hover,
+.nav__link:focus {
   color: var(--accent-color);
 }
-.current {
+
+.nav__link--current {
   color: var(--accent-color);
   position: relative;
 }
-
-.current::after {
+.nav__link--current::after {
   content: '';
   display: block;
   position: absolute;
@@ -162,100 +164,96 @@ button {
   border-radius: 2px;
 }
 
-.contacts-item {
+.contacts {
   display: flex;
-  align-items: center;
+  margin-left: auto;
 }
-.contacts-item:not(:last-child) {
+
+.contacts__item:not(:last-child) {
   margin-right: 50px;
 }
-.contacts-link {
+.contacts__link {
   display: flex;
-  align-items: inherit;
-
-  color: var(--primary-text-color);
 
   transition: color 250ms var(--timing-function);
 }
-.contacts-icon {
-  transition: fill 250ms var(--timing-function);
-}
-.contacts-link:hover .contacts-icon,
-.contacts-link:focus .contacts-icon {
-  fill: currentColor;
-}
-.contacts-link:hover,
-.contacts-link:focus {
+.contacts__link:hover,
+.contacts__link:focus {
   color: var(--accent-color);
 }
 
-.contacts-icon {
-  fill: var(--primary-text-color);
+.contacts__icon {
   margin-right: 10px;
+  fill: var(--primary-text-color);
+
+  transition: fill 250ms var(--timing-function);
+}
+.contacts__link:hover .contacts__icon,
+.contacts__link:focus .contacts__icon {
+  fill: currentColor;
 }
 
 /* ======== Hero section ======== */
 
-.hero-section {
+.hero {
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;
 
   background-color: var(--dark-bcg-color);
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../images/hero-img.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-
-  padding-top: 200px;
-  padding-bottom: 200px;
-  text-align: center;
 }
-.hero-title {
-  color: var(--white-text-color);
+.hero__title {
   margin-bottom: 30px;
+  text-align: center;
+
   text-transform: uppercase;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-
-  text-align: center;
   letter-spacing: 0.06em;
+
+  color: var(--white-text-color);
 }
 .btn {
-  cursor: pointer;
+  display: block;
   text-align: center;
+  width: 200px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   font-family: inherit;
-  background-color: var(--accent-color);
-  color: var(--white-text-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  width: 200px;
-  height: 50px;
+  letter-spacing: 0.06em;
+
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
+
   border: none;
   border-radius: 4px;
-  letter-spacing: 0.06em;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.hero-btn {
-  margin-left: auto;
-  margin-right: auto;
+  cursor: pointer;
 
   transform: scale(1);
   transition: background-color 250ms var(--timing-function), scale 250ms var(--timing-function),
     box-shadow 250ms var(--timing-function);
 }
-.hero-btn:focus,
-.hero-btn:hover,
-.form-btn:focus,
-.form-btn:hover,
-.subscribe-btn:focus,
-.subscribe-btn:hover {
+.hero__btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn:focus,
+.btn:hover {
   transform: scale(1.05);
-
-  background-color: #188ce8;
+  background-color: var(--hover-btn-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -275,10 +273,10 @@ button {
   visibility: visible;
   transition: opacity 250ms var(--timing-function), visibility 350ms var(--timing-function);
 }
-.backdrop.is-hidden {
+.backdrop--is-hidden {
   opacity: 0;
 }
-.backdrop.is-hidden .modal {
+.backdrop--is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.8);
 }
 .modal {
@@ -297,12 +295,12 @@ button {
   border-radius: 4px;
 }
 
-.is-hidden {
+.backdrop--is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
-.close-modal {
+.modal__close-btn {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -316,24 +314,24 @@ button {
   transform: scale(1);
   transition: transform 250ms var(--timing-function);
 }
-.close-modal:hover,
-.close-modal:focus {
+.modal__close-btn:hover,
+.modal__close-btn:focus {
   transform: scale(1.05);
 }
 
-.close-icon {
+.modal__close-icon {
   position: absolute;
   top: 8px;
   right: 8px;
-}
-.close-modal:hover .close-icon,
-.close-modal:focus .close-icon {
-  fill: var(--accent-color);
 
   transition: fill 250ms var(--timing-function);
 }
+.modal__close-btn:hover .modal__close-icon,
+.modal__close-btn:focus .modal__close-icon {
+  fill: var(--accent-color);
+}
 /* ======= Форма ======= */
-/* .modal-title {
+/* .form__title {
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
@@ -343,13 +341,13 @@ button {
 }
 
 
- .form-field {
+ .form__field {
   position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
-.form-input {
+.form__input {
   position: relative;
   width: 100%;
   height: 40px;
@@ -358,36 +356,39 @@ button {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
-.form-label {
+.form__label {
   margin-bottom: 4px;
 
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
 }
-.form-icon {
+.form__icon __
   position: absolute;
   left: 12px;
   bottom: 11px;
 } */
 
 /* ======= Плавающий label без id =======  */
-.modal-title {
+.form__title {
   margin-bottom: 30px;
+  text-align: center;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
-  text-align: center;
   color: var(--secondary-text-color);
 }
-.form-field {
+
+.form__field {
   position: relative;
   display: block;
 }
-.form-field:not(:last-child) {
+.form__field:not(:last-child) {
   margin-bottom: 28px;
 }
-.form-input {
+
+.form__input {
   width: 100%;
   height: 40px;
 
@@ -397,85 +398,92 @@ button {
 
   transition: border-color 250ms var(--timing-function);
 }
-.form-input:hover,
-.comment:hover {
+.form__input:hover,
+.comment__input:hover {
   cursor: pointer;
 }
-.form-label {
+.form__input:focus {
+  border-color: var(--accent-color);
+  outline: var(--accent-color);
+}
+
+.form__label {
   position: absolute;
   top: 50%;
   left: 42px;
-  transform: translateY(-50%);
 
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
 
+  transform: translateY(-50%);
   transition: transform 250ms var(--timing-function);
 }
-.form-icon {
+.form__input:not(:placeholder-shown) + .form__label {
+  transform: translate(-38px, -38px);
+}
+.form__field:focus-within .form__label {
+  transform: translate(-38px, -38px);
+}
+
+.form__icon {
   position: absolute;
   top: 50%;
   left: 12px;
-  transform: translateY(-50%);
 
+  transform: translateY(-50%);
   transition: fill 250ms var(--timing-function);
 }
-.form-field:focus-within .form-label {
-  transform: translate(-38px, -38px);
-}
-.form-field:focus-within .form-icon {
+.form__field:focus-within .form__icon {
   fill: var(--accent-color);
 }
-.form-field .form-input:focus {
-  border-color: var(--accent-color);
-  outline: var(--accent-color);
-}
-.form-input:not(:placeholder-shown) + .form-label {
-  transform: translate(-38px, -38px);
-}
-/* ======= */
-.comment-section {
+
+.comment {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-.comment {
+
+.comment__label {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+.comment__input {
   display: block;
   width: 100%;
   height: 120px;
   resize: none;
   padding: 12px 16px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
   transition: border-color 250ms var(--timing-function);
 }
-.comment-label {
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-}
-.comment::placeholder {
+
+.comment__input::placeholder {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
 
   color: rgba(117, 117, 117, 0.5);
 }
-.comment:focus {
+.comment__input:focus {
   border-color: var(--accent-color);
   outline: var(--accent-color);
 }
+
 .policy {
   margin-bottom: 30px;
 }
-.policy-field {
+.policy__field {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.checkbox {
+.policy__checkbox {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
@@ -485,45 +493,43 @@ button {
   padding: 0;
   overflow: hidden;
 }
-.checkbox-icon {
+
+.policy__icon {
   display: inline-block;
   width: 16px;
   height: 15px;
   margin-right: 7px;
+
   border: 1px solid var(--secondary-text-color);
   border-radius: 4px;
 }
 /* рамка при фокусе на чекбокс */
-.checkbox:focus + .checkbox-icon {
+.policy__checkbox:focus + .policy__icon {
   outline: 2px solid #0e6ab6;
 }
-.checkbox:hover + .checkbox-icon {
+.policy__checkbox:hover + .policy__icon {
   cursor: pointer;
 }
-.checkbox:checked + .checkbox-icon {
+.policy__checkbox:checked + .policy__icon {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
   background-image: url('../images/icon-check.svg');
   background-size: cover;
   background-origin: border-box;
 }
-.checkbox-label {
+.policy__label {
   display: inline-block;
   margin-right: 5px;
 }
-.checkbox-link {
+.policy__link {
   display: inline-block;
   color: var(--accent-color);
   /* делает подчеркивание сплошным */
   text-decoration-skip-ink: none;
 }
-.form-btn {
-  display: block;
+.form__btn {
   margin-left: auto;
   margin-right: auto;
-
-  transform: scale(1);
-  transition: transform 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 /* ======== Feauteres section ========  */
