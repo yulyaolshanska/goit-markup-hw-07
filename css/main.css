@@ -70,7 +70,6 @@ button {
 
 .works__text, .team__text, .portfolio__text {
   font-size: 16px;
-  line-height: 1.19;
   color: var(--primary-text-color);
 }
 
@@ -704,6 +703,7 @@ button {
 }
 
 .team__text {
+  line-height: 1.19;
   margin-bottom: 16px;
 }
 
@@ -1057,6 +1057,10 @@ button {
   line-height: 2;
   margin-bottom: 4px;
   letter-spacing: 0.06em;
+}
+
+.portfolio__text {
+  line-height: 1.87;
 }
 
 /* ====== Flex-basis ======= */

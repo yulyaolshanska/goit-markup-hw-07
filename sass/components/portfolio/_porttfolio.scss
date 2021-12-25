@@ -43,6 +43,7 @@
 }
 .portfolio__text {
   @extend %card-text;
+  line-height: 1.87;
 }
 
 /* ====== Flex-basis ======= */
