@@ -18,8 +18,9 @@
 
   transform: translateY(100%);
   transition: transform 250ms var(--timing-function);
-}
-.portfolio__link:hover .portfolio__overlay-text,
-.portfolio__link:focus .portfolio__overlay-text {
-  transform: translateY(0);
+
+  .portfolio__link:hover &,
+  .portfolio__link:focus & {
+    transform: translateY(0);
+  }
 }

@@ -10,7 +10,8 @@
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
-}
-.logo__text {
-  color: var(--accent-color);
+
+  &--accent {
+    color: var(--accent-color);
+  }
 }

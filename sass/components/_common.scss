@@ -8,6 +8,14 @@
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
+
+  &--no-indent {
+    padding-bottom: 0px;
+  }
+
+  &--other-bcg {
+    background-color: var(--secondary-bcg-color);
+  }
 }
 .section__title {
   @extend %title;
@@ -48,8 +56,8 @@
   border-radius: 4px;
 
   transform: scale(1);
-  transition: background-color 250ms var(--timing-function), scale 250ms var(--timing-function),
-    box-shadow 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function),
+    scale 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
 
   &:focus,
   &:hover {

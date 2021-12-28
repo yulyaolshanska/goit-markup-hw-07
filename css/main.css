@@ -64,7 +64,7 @@ button {
   cursor: pointer;
 }
 
-.section__title, .features__title, .team__name, .portfolio__title {
+.section__title, .features__title, .team__title, .portfolio__title {
   color: var(--secondary-text-color);
 }
 
@@ -84,6 +84,14 @@ button {
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
+}
+
+.section--no-indent {
+  padding-bottom: 0px;
+}
+
+.section--other-bcg {
+  background-color: var(--secondary-bcg-color);
 }
 
 .section__title {
@@ -162,11 +170,11 @@ button {
   text-decoration: none;
 }
 
-.logo__text {
+.logo--accent {
   color: var(--accent-color);
 }
 
-.header-nav,
+.header__container,
 .site-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -210,7 +218,7 @@ button {
 }
 
 .nav__link--current::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   bottom: 0;
@@ -232,6 +240,9 @@ button {
 }
 
 .contacts__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-height: 80px;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -239,14 +250,6 @@ button {
   text-decoration: none;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  -webkit-transition: color 250ms var(--timing-function);
-  transition: color 250ms var(--timing-function);
-}
-
-.contacts__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   color: var(--primary-text-color);
   -webkit-transition: color 250ms var(--timing-function);
   transition: color 250ms var(--timing-function);
@@ -305,6 +308,8 @@ button {
   right: 0;
   left: 0;
   z-index: 2;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
@@ -378,6 +383,7 @@ button {
 }
 
 .form__title {
+  display: block;
   margin-bottom: 30px;
   text-align: center;
   font-weight: 700;
@@ -413,6 +419,10 @@ button {
 .form__input:focus {
   border-color: var(--accent-color);
   outline: var(--accent-color);
+}
+
+.form__input:not(:placeholder-shown):invalid {
+  border-color: #e23535;
 }
 
 .form__label {
@@ -586,10 +596,6 @@ button {
 }
 
 .features {
-  padding-top: 94px;
-}
-
-.features__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -668,10 +674,6 @@ button {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-.team__section {
-  background-color: var(--secondary-bcg-color);
-}
-
 .team {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -695,7 +697,7 @@ button {
   text-align: center;
 }
 
-.team__name {
+.team__title {
   margin-bottom: 10px;
   font-weight: 500;
   font-size: 16px;

@@ -22,14 +22,18 @@
     <!-- ======= Header ======= -->
 
     <header class="header">
-      <div class="container header-nav">
+      <div class="container header__container">
         <nav class="site-nav">
-          <a href="" class="logo header__logo"><span class="logo__text">Web</span>Studio</a>
+          <a href="" class="logo header__logo"><span class="logo--accent">Web</span>Studio</a>
 
           <ul class="nav">
-            <li class="nav__item"><a href="" class="nav__link nav__link--current">Студия</a></li>
+            <li class="nav__item">
+              <a href="" class="nav__link nav__link--current">Студия</a>
+            </li>
 
-            <li class="nav__item"><a href="./portfolio.html" class="nav__link">Портфолио </a></li>
+            <li class="nav__item">
+              <a href="./portfolio.html" class="nav__link">Портфолио </a>
+            </li>
 
             <li class="nav__item"><a href="" class="nav__link">Контакты</a></li>
           </ul>
@@ -80,7 +84,7 @@
 
           <!-- ======= Плавающий label без id ======= -->
           <form class="form">
-            <h2 class="form__title">Оставьте свои данные, мы вам перезвоним</h2>
+            <b class="form__title">Оставьте свои данные, мы вам перезвоним</b>
             <div>
               <label class="form__field">
                 <input
@@ -89,17 +93,26 @@
                   name="user-name"
                   autofocus
                   required
+                  minlength="2"
                   placeholder=" "
                 />
-                <span class="form__label">Имя</span>
+                <span class="form__label">Имя*</span>
                 <svg class="form__icon" width="18" height="18">
                   <use href="./images/icons.svg#icon-person-modal"></use>
                 </svg>
               </label>
 
               <label class="form__field">
-                <input type="tel" class="form__input" name="tel" required placeholder=" " />
-                <span class="form__label">Телефон</span>
+                <input
+                  type="tel"
+                  class="form__input"
+                  name="tel"
+                  required
+                  minlength="10"
+                  title="+380505055050"
+                  placeholder=" "
+                />
+                <span class="form__label">Телефон*</span>
                 <svg class="form__icon" width="18" height="18">
                   <use href="./images/icons.svg#icon-phone-modal"></use>
                 </svg>
@@ -107,7 +120,7 @@
 
               <label class="form__field">
                 <input type="email" class="form__input" name="email" required placeholder=" " />
-                <span class="form__label">Почта</span>
+                <span class="form__label">Почта*</span>
                 <svg class="form__icon" width="18" height="18">
                   <use href="./images/icons.svg#icon-email-modal"></use>
                 </svg>
@@ -173,11 +186,11 @@
 
       <!-- ======= Особенности  ======= -->
 
-      <section class="features">
+      <section class="section section--no-indent">
         <div class="container">
           <h2 class="section__title section__title--is-hidden">Особенности нашей работы</h2>
 
-          <ul class="features__list">
+          <ul class="features">
             <li class="features__item">
               <div class="features__icon-box">
                 <svg class="features__icon" width="70px" height="70px">
@@ -253,14 +266,14 @@
 
       <!-- ======= Команда  ======= -->
 
-      <section class="section team__section">
+      <section class="section section--other-bcg">
         <div class="container">
           <h2 class="section__title">Наша команда</h2>
           <ul class="team">
             <li class="team__item">
               <img src="./images/ourteam1.jpg" alt="Портрет Игоря Демьяненко" width="270" />
               <div class="team__info">
-                <h3 class="team__name">Игорь Демьяненко</h3>
+                <h3 class="team__title">Игорь Демьяненко</h3>
                 <p class="team__text" lang="en">Product Designer</p>
 
                 <ul class="social">
@@ -299,7 +312,7 @@
             <li class="team__item">
               <img src="./images/ourteam2.jpg" alt="Портрет Ольги Репиной" width="270" />
               <div class="team__info">
-                <h3 class="team__name">Ольга Репина</h3>
+                <h3 class="team__title">Ольга Репина</h3>
                 <p class="team__text" lang="en">Frontend Developer</p>
 
                 <ul class="social">
@@ -338,7 +351,7 @@
             <li class="team__item">
               <img src="./images/ourteam3.jpg" alt="Портрет Николая Тарасова" width="270" />
               <div class="team__info">
-                <h3 class="team__name">Николай Тарасов</h3>
+                <h3 class="team__title">Николай Тарасов</h3>
                 <p class="team__text" lang="en">Marketing</p>
 
                 <ul class="social">
@@ -377,7 +390,7 @@
             <li class="team__item">
               <img src="./images/ourteam4.jpg" alt="Портрет Михаила Ермакова" width="270" />
               <div class="team__info">
-                <h3 class="team__name">Михаил Ермаков</h3>
+                <h3 class="team__title">Михаил Ермаков</h3>
                 <p class="team__text" lang="en">UI Designer</p>
 
                 <ul class="social">
@@ -476,7 +489,7 @@
     <footer class="footer-section">
       <div class="container footer">
         <div class="footer__contacts">
-          <a href="" class="logo footer__logo"><span class="logo__text">Web</span>Studio</a>
+          <a href="" class="logo footer__logo"><span class="logo--accent">Web</span>Studio</a>
           <address class="address">
             <ul>
               <li class="address__item">

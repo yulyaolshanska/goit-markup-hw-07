@@ -1,7 +1,3 @@
-.team__section {
-  background-color: var(--secondary-bcg-color);
-}
-
 .team {
   display: flex;
 }
@@ -24,7 +20,7 @@
   text-align: center;
 }
 
-.team__name {
+.team__title {
   @extend %title;
   margin-bottom: 10px;
 

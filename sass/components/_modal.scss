@@ -5,12 +5,13 @@
   right: 0;
   left: 0;
   z-index: 2;
-
+  backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms var(--timing-function), visibility 350ms var(--timing-function);
+  transition: opacity 250ms var(--timing-function),
+    visibility 350ms var(--timing-function);
 
   &--is-hidden {
     opacity: 0;
@@ -72,6 +73,7 @@
   }
 }
 .form__title {
+  display: block;
   margin-bottom: 30px;
   text-align: center;
 
@@ -108,6 +110,9 @@
   &:focus {
     border-color: var(--accent-color);
     outline: var(--accent-color);
+  }
+  &:not(:placeholder-shown):invalid {
+    border-color: #e23535;
   }
 }
 
@@ -223,7 +228,7 @@
 .policy__checkbox:checked + .policy__icon {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-  background-image: url('../images/icon-check.svg');
+  background-image: url("../images/icon-check.svg");
   background-size: cover;
   background-origin: border-box;
 }

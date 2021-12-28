@@ -1,4 +1,4 @@
-.header-nav,
+.header__container,
 .site-nav {
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@
     position: relative;
   }
   &--current::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     bottom: 0;
